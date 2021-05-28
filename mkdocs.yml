@@ -15,5 +15,5 @@ theme:
 
   text: Roboto
   code: Lato
-  logo: Assets/Logo.png
-  favicon: Assets/Logo.png
+  logo: https://cdn.discordapp.com/attachments/753043099839758348/847832200421310495/Logo.png
+  favicon: https://cdn.discordapp.com/attachments/753043099839758348/847832200421310495/Logo.png
