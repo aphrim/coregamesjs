@@ -15,3 +15,5 @@ theme:
 
   text: Roboto
   code: Lato
+  logo: ./Assets/Logo.png
+  favicon: ./Assets/Logo.png
