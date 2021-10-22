@@ -4,8 +4,7 @@
 ### Methods
 * `Platform.getActiveGames()` -> `Array<`[CoreGame](#coregame)`>`
 * `Platform.getTopGames()` -> `Array<`[CoreGame](#coregame)`>`
-* `Platform.searchCommunityContent(authToken, [searchTerm, sortOrder, continuationToken])` -> `Array<`[CommunityContent](#communitycontent)`>` authToken is the only required field. An auth token can be obtained from `Platform.login()`. All other arguments are optional.
-* `Platform.login(email, password)`     -> `String` Returns string of the authToken that is required for use in some functions. I would advise to create an alt account specifically just for the authToken because if you are developing on web or something someone may get the authToken returned from this and be able to exploit it. Just a warning.
+* `Platform.searchCommunityContent(searchTerm, sortOrder, continuationToken)` -> `Array<`[CommunityContent](#communitycontent)`> All fields are optional.
 * `Platform.searchUsers(searchTerm)` -> `Array<`[CoreProfile](#coreprofile)`>`
 * `Platform.searchGames(searchTerm)` ->  `Array<`[CoreGame](#coregame)`>`
 * `Platform.getUserById(id)`         ->  [CoreProfileAdvanced](#coreprofileadvanced)
@@ -77,7 +76,7 @@ Default return value for most things that return a core profile. More advanced i
 * `CoreProfileAdvanced.getLikedGames()`    -> `Array<`[CoreGame](#coregame)`>`
 * `CoreProfileAdvanced.getCreatedGames()`  -> `Array<`[CoreGame](#coregame)`>`
 * `CoreProfileAdvanced.getRecentlyPlayedGames()` -> `Array<`[CoreGame](#coregame)`>`
-* `CoreProfileAdvanced.getCommunityContent(authToken, [continuationToken, sortOptions])` -> `Array<`[CommunityContent](#communitycontent)`>` authToken is only required field. An authToken can be obtained from `Platform.login(email, password)`
+* `CoreProfileAdvanced.getCommunityContent(continuationToken, sortOptions)` -> `Array<`[CommunityContent](#communitycontent)`>`
 
 ## CommunityContent
 ### Properties

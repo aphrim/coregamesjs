@@ -24,35 +24,19 @@ Platform.getTopGames = async function () {
     return returnVal
 }
 
-Platform.searchCommunityContent = async function(authToken ='', searchTerm ='',sortOrder = 'MostDownloaded', continuationToken = '') {
+Platform.searchCommunityContent = async function(searchTerm ='',sortOrder = 'MostDownloaded', continuationToken = '') {
     let returnVal = []
     await axios.post('https://www.coregames.com/api/Template/search_v2?searchTerm=' + searchTerm, {
     'continuationToken': continuationToken,
     'sortOptions': sortOrder,
     'reverseSort': false,
-    'categories': null}, {
-        headers: {
-            'AuthToken': authToken
-        }
+    'categories': null
     }).then(res => {
         res.data.items.forEach(communityContent => {
             returnVal.push(new CommunityContent(communityContent))
         })
     })
     return returnVal
-}
-
-Platform.login = async function(email = '', password = '') {
-    authToken = ''
-    await axios.post ('https://www.coregames.com/api/Account/login', {
-        "email": email,
-        "password": password,
-        'savePassword': true
-    })
-    .then(res => {
-        authToken = res.data.authToken
-    })
-    return authToken
 }
 
 Platform.searchUsers = async function(searchTerm = '') {
@@ -123,4 +107,6 @@ Platform.getUserByID = async function(id = '') {
         return returnVal
     }
 */
+
+
 module.exports = {Platform, Game}

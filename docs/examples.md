@@ -13,11 +13,10 @@
 ### Get the Community Content from people who have published a game that shows up with the search 'Example'.
     async function example2() {
         let games = await Platform.searchGames('Example')
-        let authToken = await Platform.login(config.coreEmail, config.corePassword)
         games.forEach(game => {
             game.getAdvanced().then(advancedInfo => {
                 advancedInfo.ownerProfile.getAdvanced().then(creatorInfo => {
-                    creatorInfo.getCommunityContent(authToken).then(CommunityContent => {
+                    creatorInfo.getCommunityContent().then(CommunityContent => {
                         console.log(CommunityContent)
                     })
                 })

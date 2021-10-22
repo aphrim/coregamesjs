@@ -61,7 +61,7 @@ class CoreProfileAdvanced {
         return returnVal
     }
 
-    getCommunityContent = async function(authToken = '', continuationToken = '', sortOptions = 'MostDownloaded') {
+    getCommunityContent = async function(continuationToken = '', sortOptions = 'MostDownloaded') {
         let returnVal = []
         await axios.post('https://www.coregames.com/api/Template/search_v2?searchTerm=', {
             'continuationToken': continuationToken,
