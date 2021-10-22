@@ -70,7 +70,6 @@ class CoreProfileAdvanced {
             'categories': null,
             'ownerID': this.id }, {
                 headers: {
-                    'AuthToken': authToken
                 }
             }    
         ).then(res => {
